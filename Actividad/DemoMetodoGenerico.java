@@ -1,5 +1,6 @@
 package Actividad;
 
+//Compara dos arreglos (arrays) y verifica si son iguales en contenido y orden
 public class DemoMetodoGenerico {
     
     static <T extends Comparable<T>> boolean igualArrays (T[] x, T[] y){
@@ -38,11 +39,23 @@ public class DemoMetodoGenerico {
 
         // Crea un array de double
         // Nos dice que nuestro metodo igualArrays esperaba que ambos arreglos fueran exactamente del mismo tipo (T)
-        //Integer[]≠ Double[] -> No se pueden comprar directamente
+        //Integer[]≠ Double[] -> No se pueden comparar directamente
         //Double dvals[]={1.1,2.2,3.3,4.4,5.5};
         //if(igualArrays(nums,dvals)) 
         //System.out.println("nums es igual a dvals");
-        // La solucion que se me ocurre es cambiar
+        // La solucion que se me ocurre es  modificar el método para aceptar DOS tipos genéricos: T y U
+       // static <T extends Number, U extends Number> boolean igualArrays(T[] x, U[] y) {
+            // Si los arreglos tienen diferente longitud, no son iguales
+           // if (x.length != y.length)
+             //   return false;
+             //Comparamos elemento por elemento convirtiéndolos a double
+       // for (int i = 0; i < x.length; i++) {
+            //if (x[i].doubleValue() != y[i].doubleValue()) 
+              //  return false; //Si hay una diferencia, los arreglos son distintos
+       // }
+        //return true; //Si todos los valores coinciden, los arreglos son equivalentes
+    //}
         }
+
     }
     
